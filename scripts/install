@@ -1,0 +1,113 @@
+#!/bin/bash
+
+#=================================================
+# GENERIC START
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
+source _common.sh
+source /usr/share/yunohost/helpers
+
+#=================================================
+# INSTALL DEX FOR OIDC
+#=================================================
+ynh_script_progression --message="Installing Dex..." --weight=1
+
+oidc_secret="$(echo $(ynh_string_random --length=64 --filter='A-F0-9'))"
+oidc_name="$app"
+oidc_callback="$domain/oidc/callback"
+
+ynh_app_setting_set --app=$app --key=oidc_secret   --value=$oidc_secret
+ynh_app_setting_set --app=$app --key=oidc_name     --value=$oidc_name
+ynh_app_setting_set --app=$app --key=oidc_callback --value=$oidc_callback
+
+if yunohost app list | grep -q "$YNH_APP_ARG_DEX_DOMAIN$YNH_APP_ARG_DEX_PATH"; then
+	ynh_die "The domain and path provided for Dex is already used by another app. Please chose another one !"
+fi
+
+yunohost app install https://github.com/YunoHost-Apps/dex_ynh --force --args "domain=$dex_domain&path=$dex_path&OIDC_name=$oidc_name&OIDC_secret=$oidc_secret&OIDC_callback=$oidc_callback" 2>&1 | tee dexlog.txt
+dex_app=$(gawk 'match($0, /Installation of (.+) completed/, app) {print app[1]}' dexlog.txt)
+rm dexlog.txt
+
+# Create Dex URIs
+if [ $dex_path = "/" ]
+then
+	dex_auth_uri="https://$dex_domain/auth"
+	dex_token_uri="https://$dex_domain/token"
+	dex_user_uri="https://$dex_domain/userinfo"
+else
+	dex_auth_uri="https://$dex_domain$dex_path/auth"
+	dex_token_uri="https://$dex_domain$dex_path/token"
+	dex_user_uri="https://$dex_domain$dex_path/userinfo"
+fi
+
+#=================================================
+# DOWNLOAD, CHECK AND UNPACK SOURCE
+#=================================================
+ynh_script_progression --message="Setting up source files..." --weight=1
+
+# Download, check integrity, uncompress and patch the source from app.src
+ynh_setup_source --dest_dir="$install_dir"
+
+chmod 750 "$install_dir"
+chmod -R o-rwx "$install_dir"
+chown -R $app:$app "$install_dir"
+chmod -R ug+x "$install_dir/headscale"
+
+#=================================================
+# NGINX CONFIGURATION
+#=================================================
+ynh_script_progression --message="Configuring NGINX web server..." --weight=1
+
+# Create a dedicated NGINX config
+ynh_add_nginx_config
+
+#=================================================
+# ADD A CONFIGURATION
+#=================================================
+ynh_script_progression --message="Adding a configuration file..." --weight=1
+
+ynh_add_config --template="config.yaml" --destination="$install_dir/config.yaml"
+
+chmod 400 "$install_dir/config.yaml"
+chown $app:$app "$install_dir/config.yaml"
+
+#=================================================
+# SETUP SYSTEMD
+#=================================================
+ynh_script_progression --message="Configuring a systemd service..." --weight=1
+
+# Create a dedicated systemd config
+ynh_add_systemd_config
+
+#=================================================
+# GENERIC FINALIZATION
+#=================================================
+# SETUP LOGROTATE
+#=================================================
+ynh_script_progression --message="Configuring log rotation..." --weight=1
+
+# Use logrotate to manage application logfile(s)
+ynh_use_logrotate
+
+#=================================================
+# INTEGRATE SERVICE IN YUNOHOST
+#=================================================
+ynh_script_progression --message="Integrating service in YunoHost..." --weight=1
+
+yunohost service add $app --description="Control server for the WireGuard-based VPN" --log="/var/log/$app/$app.log"
+
+#=================================================
+# START SYSTEMD SERVICE
+#=================================================
+ynh_script_progression --message="Starting a systemd service..." --weight=1
+
+# Start a systemd service
+ynh_systemd_action --service_name=$app --action="start" --log_path="/var/log/$app/$app.log"
+
+#=================================================
+# END OF SCRIPT
+#=================================================
+
+ynh_script_progression --message="Installation of $app completed" --last
