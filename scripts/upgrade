@@ -47,12 +47,7 @@ ynh_add_nginx_config
 #=================================================
 # UPDATE A CONFIG FILE
 #=================================================
-ynh_script_progression --message="Updating a configuration file..." --weight=1
-
-ynh_add_config --template="config.yaml" --destination="$install_dir/config.yaml"
-
-chmod 400 "$install_dir/config.yaml"
-chown $app:$app "$install_dir/config.yaml"
+# We do not alter the configuration file since admins are encouraged to fine-tune it.
 
 #=================================================
 # SETUP SYSTEMD
