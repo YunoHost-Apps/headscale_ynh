@@ -1,4 +1,6 @@
-You are encouraged to tweak Headscale's configuration in `__INSTALL_DIR__/config.yaml`.
+Tweak Headscale's configuration in `__INSTALL_DIR__/config.yaml`.
+
+All features might not be compatible with YunoHost.
 Feel free to experiment and report your use cases in YunoHost's forum and chatrooms!
 
 Some technical notes:
