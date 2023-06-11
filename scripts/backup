@@ -42,14 +42,10 @@ ynh_backup --src_path="/etc/logrotate.d/$app"
 ynh_backup --src_path="/etc/systemd/system/$app.service"
 
 #=================================================
-# BACKUP THE MYSQL DATABASE
+# BACKUP THE DATABASE
 #=================================================
-ynh_print_info --message="Backing up the MySQL database..."
-
-### (However, things like MySQL dumps *do* take some time to run, though the
-### copy of the generated dump to the archive still happens later)
-
-ynh_mysql_dump_db --database="$db_name" > db.sql
+#ynh_print_info --message="Backing up the PostgreSQL database..."
+# FIXME: cf. config file
 
 #=================================================
 # END OF SCRIPT
