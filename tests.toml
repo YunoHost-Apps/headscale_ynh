@@ -2,3 +2,11 @@ test_format = 1.0
 
 [default]
 
+    preinstall = """
+    sudo yunohost domain add dex-headscale.domain.tld
+    """
+
+    args.domain = "headscale.domain.tld"
+    args.dex_domain = "dex-headscale.domain.tld"
+    args.dex_path = "/dex"
+    args.base_domain = "headscale.domain.tld"
