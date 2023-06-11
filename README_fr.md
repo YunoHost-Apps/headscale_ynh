@@ -16,15 +16,56 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 
 ## Vue d’ensemble
 
-Some long and extensive description of what the app is and does, lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+An open source, self-hosted implementation of the Tailscale control server.
+
+### What is Tailscale
+
+Tailscale is [a modern VPN](https://tailscale.com/) built on top of
+[Wireguard](https://www.wireguard.com/).
+It [works like an overlay network](https://tailscale.com/blog/how-tailscale-works/)
+between the computers of your networks - using
+[NAT traversal](https://tailscale.com/blog/how-nat-traversal-works/).
+
+Everything in Tailscale is Open Source, except the GUI clients for proprietary OS
+(Windows and macOS/iOS), and the control server.
+
+The control server works as an exchange point of Wireguard public keys for the
+nodes in the Tailscale network. It assigns the IP addresses of the clients,
+creates the boundaries between each user, enables sharing machines between users,
+and exposes the advertised routes of your nodes.
+
+A [Tailscale network (tailnet)](https://tailscale.com/kb/1136/tailnet/) is private
+network which Tailscale assigns to a user in terms of private users or an
+organisation.
+
+### Design goal
+
+Headscale aims to implement a self-hosted, open source alternative to the Tailscale
+control server.
+Headscale's goal is to provide self-hosters and hobbyists with an open-source
+server they can use for their projects and labs.
+It implements a narrow scope, a single Tailnet, suitable for a personal use, or a small
+open-source organisation.
 
 ### Features
 
-- Ut enim ad minim veniam, quis nostrud exercitation ullamco ;
-- Laboris nisi ut aliquip ex ea commodo consequat ;
-- Duis aute irure dolor in reprehenderit in voluptate ;
-- Velit esse cillum dolore eu fugiat nulla pariatur ;
-- Excepteur sint occaecat cupidatat non proident, sunt in culpa."
+
+- Full "base" support of Tailscale's features
+- Configurable DNS
+  - [Split DNS](https://tailscale.com/kb/1054/dns/#using-dns-settings-in-the-admin-console)
+- Node registration
+  - Single-Sign-On (via Open ID Connect)
+  - Pre authenticated key
+- Taildrop (File Sharing)
+- [Access control lists](https://tailscale.com/kb/1018/acls/)
+- [MagicDNS](https://tailscale.com/kb/1081/magicdns)
+- Support for multiple IP ranges in the tailnet
+- Dual stack (IPv4 and IPv6)
+- Routing advertising (including exit nodes)
+- Ephemeral nodes
+- Embedded [DERP server](https://tailscale.com/blog/how-tailscale-works/#encrypted-tcp-relays-derp)
+
+*from Headscale's README. See Links section below.*
 
 
 **Version incluse :** 0.22.3~ynh1
@@ -33,26 +74,11 @@ Some long and extensive description of what the app is and does, lorem ipsum dol
 
 ![Capture d’écran de Headscale](./doc/screenshots/example.jpg)
 
-## Avertissements / informations importantes
-
-* Any known limitations, constrains or stuff not working, such as (but not limited to):
-    * requiring a full dedicated domain ?
-    * architectures not supported ?
-    * not-working single-sign on or LDAP integration ?
-    * the app requires an important amount of RAM / disk / .. to install or to work properly
-    * etc...
-
-* Other infos that people should be aware of, such as:
-    * any specific step to perform after installing (such as manually finishing the install, specific admin credentials, ...)
-    * how to configure / administrate the application if it ain't obvious
-    * upgrade process / specificities / things to be aware of ?
-    * security considerations ?
-
 ## Documentations et ressources
 
-* Site officiel de l’app : <https://tailscale.com/>
+* Site officiel de l’app : <https://headscale.net/>
 * Documentation officielle utilisateur : <https://tailscale.com/kb/>
-* Documentation officielle de l’admin : <https://github.com/juanfont/headscale/tree/main/docs>
+* Documentation officielle de l’admin : <https://headscale.net/>
 * Dépôt de code officiel de l’app : <https://github.com/juanfont/headscale>
 * Documentation YunoHost pour cette app : <https://yunohost.org/app_headscale>
 * Signaler un bug : <https://github.com/YunoHost-Apps/headscale_ynh/issues>
