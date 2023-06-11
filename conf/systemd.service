@@ -1,5 +1,5 @@
 [Unit]
-Description=Small description of the service
+Description=Control server for the WireGuard-based VPN
 After=network.target
 
 [Service]
