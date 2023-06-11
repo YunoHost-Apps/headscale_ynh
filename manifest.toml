@@ -21,8 +21,8 @@ fund = "https://ko-fi.com/headscale"
 yunohost = ">= 11.0.0"
 architectures = "all"
 multi_instance = false
-ldap = "true"
-sso = "false"
+ldap = true
+sso = false
 disk = "50M"
 ram.build = "50M"
 ram.runtime = "50M"
@@ -80,6 +80,6 @@ ram.runtime = "50M"
     metrics.default = 9090
     grpc.default = 50443
 
-# FIXME: cf. config file
+# Disabled, cf. config file
 #    [resources.database]
 #    type = "postgresql"
