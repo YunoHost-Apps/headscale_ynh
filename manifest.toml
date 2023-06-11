@@ -15,7 +15,7 @@ userdoc = "https://tailscale.com/kb/"
 code = "https://github.com/juanfont/headscale"
 website = "https://headscale.net/"
 cpe = "cpe:2.3:a:tailscale:tailscale"
-fund = "https://ko-fi.com/headscale
+fund = "https://ko-fi.com/headscale"
 
 [integration]
 yunohost = ">= 11.0.0"
