@@ -47,6 +47,13 @@ ynh_script_progression --message="Removing NGINX web server configuration..." --
 ynh_remove_nginx_config
 
 #=================================================
+# REMOVE DEX APP
+#=================================================
+ynh_script_progression --message="Removing Dex app used for Headscale authentication..." --weight=1
+
+yunohost app remove $dex_app
+
+#=================================================
 # CLOSE A PORT
 #=================================================
 
