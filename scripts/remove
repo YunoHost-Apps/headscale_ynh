@@ -47,6 +47,13 @@ ynh_script_progression --message="Removing NGINX web server configuration..." --
 ynh_remove_nginx_config
 
 #=================================================
+# REMOVE DEX APP
+#=================================================
+ynh_script_progression --message="Removing Dex app used for Headscale authentication..." --weight=1
+
+yunohost app remove $dex_app
+
+#=================================================
 # CLOSE A PORT
 #=================================================
 
@@ -57,25 +64,11 @@ then
 fi
 
 #=================================================
-# REMOVE FAIL2BAN CONFIGURATION
-#=================================================
-ynh_script_progression --message="Removing Fail2Ban configuration..." --weight=1
-
-# Remove the dedicated Fail2Ban config
-ynh_remove_fail2ban_config
-
-#=================================================
 # SPECIFIC REMOVE
 #=================================================
 # REMOVE VARIOUS FILES
 #=================================================
 ynh_script_progression --message="Removing various files..." --weight=1
-
-# Remove a cron file
-ynh_secure_remove --file="/etc/cron.d/$app"
-
-# Remove a directory securely
-ynh_secure_remove --file="/etc/$app"
 
 # Remove the log files
 ynh_secure_remove --file="/var/log/$app"
@@ -83,12 +76,6 @@ ynh_secure_remove --file="/var/log/$app"
 #=================================================
 # GENERIC FINALIZATION
 #=================================================
-# REMOVE DEDICATED USER
-#=================================================
-#REMOVEME? ynh_script_progression --message="Removing the dedicated system user..." --weight=1
-
-# Delete a system user
-#REMOVEME? ynh_system_user_delete --username=$app
 
 #=================================================
 # END OF SCRIPT

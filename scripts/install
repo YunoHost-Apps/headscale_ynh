@@ -14,13 +14,9 @@ source /usr/share/yunohost/helpers
 #=================================================
 ynh_script_progression --message="Installing Dex..." --weight=1
 
-oidc_secret="$(echo $(ynh_string_random --length=64 --filter='A-F0-9'))"
+oidc_secret="$(echo $(ynh_string_random --length=32 --filter='A-F0-9'))"
 oidc_name="$app"
 oidc_callback="$domain/oidc/callback"
-
-ynh_app_setting_set --app=$app --key=oidc_secret   --value=$oidc_secret
-ynh_app_setting_set --app=$app --key=oidc_name     --value=$oidc_name
-ynh_app_setting_set --app=$app --key=oidc_callback --value=$oidc_callback
 
 if yunohost app list | grep -q "$YNH_APP_ARG_DEX_DOMAIN$YNH_APP_ARG_DEX_PATH"; then
 	ynh_die "The domain and path provided for Dex is already used by another app. Please chose another one !"
@@ -41,6 +37,12 @@ else
 	dex_token_uri="https://$dex_domain$dex_path/token"
 	dex_user_uri="https://$dex_domain$dex_path/userinfo"
 fi
+
+# Store Dex settings
+ynh_app_setting_set --app=$app --key=oidc_secret   --value=$oidc_secret
+ynh_app_setting_set --app=$app --key=oidc_name     --value=$oidc_name
+ynh_app_setting_set --app=$app --key=oidc_callback --value=$oidc_callback
+ynh_app_setting_set --app=$app --key=dex_app       --value=$dex_app
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -70,7 +72,7 @@ ynh_script_progression --message="Adding a configuration file..." --weight=1
 
 ynh_add_config --template="config.yaml" --destination="$install_dir/config.yaml"
 
-chmod 400 "$install_dir/config.yaml"
+chmod 600 "$install_dir/config.yaml"
 chown $app:$app "$install_dir/config.yaml"
 
 #=================================================
