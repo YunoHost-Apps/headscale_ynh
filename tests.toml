@@ -6,7 +6,7 @@ test_format = 1.0
     sudo yunohost domain add dex-headscale.domain.tld
     """
 
-    args.domain = "headscale.domain.tld"
+    args.domain = "sub.domain.tld"
     args.dex_domain = "dex-headscale.domain.tld"
     args.dex_path = "/dex"
-    args.base_domain = "headscale.domain.tld"
+    args.base_domain = "sub.domain.tld"
