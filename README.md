@@ -69,11 +69,6 @@ open-source organisation.
 
 
 **Shipped version:** 0.22.3~ynh1
-
-## Screenshots
-
-![Screenshot of Headscale](./doc/screenshots/example.jpg)
-
 ## Documentation and resources
 
 * Official app website: <https://headscale.net/>
