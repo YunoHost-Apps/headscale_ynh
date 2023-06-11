@@ -69,11 +69,6 @@ open-source organisation.
 
 
 **Version incluse :** 0.22.3~ynh1
-
-## Captures d’écran
-
-![Capture d’écran de Headscale](./doc/screenshots/example.jpg)
-
 ## Documentations et ressources
 
 * Site officiel de l’app : <https://headscale.net/>
