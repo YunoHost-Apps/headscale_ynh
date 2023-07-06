@@ -62,11 +62,10 @@ ram.runtime = "50M"
     armel.sha256 = "3a983ea320b05372b5493ece01bab1252907e0864a26f1857dbcd7307dfc463f"
 
     autoupdate.strategy = "latest_github_release"
-    autoupdate.asset.i386 = ".*_386"
-    autoupdate.asset.amd64 = ".*_amd64"
-    autoupdate.asset.arm64 = ".*_arm64"
-    autoupdate.asset.armhf = ".*_armv7"
-    autoupdate.asset.armel = ".*_armv5"
+    autoupdate.asset.i386 = ".*_linux_386$"
+    autoupdate.asset.amd64 = ".*_linux_amd64$"
+    autoupdate.asset.arm64 = ".*_linux_arm64$"
+    autoupdate.asset.armhf = ".*_linux_armv7$"
 
     [resources.system_user]
 
