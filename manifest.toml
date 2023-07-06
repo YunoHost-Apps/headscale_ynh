@@ -55,18 +55,17 @@ ram.runtime = "50M"
     amd64.url = "https://github.com/juanfont/headscale/releases/download/v0.22.3/headscale_0.22.3_linux_amd64"
     amd64.sha256 = "41eb475ba94d2f4efdd5b90ca76d3926a0fc0b561baabf6190ca32335c9102d2"
     arm64.url = "https://github.com/juanfont/headscale/releases/download/v0.22.3/headscale_0.22.3_linux_arm64"
-    arm64.sha256 = "5835d282fdfcb42b30802e76bf1fac5e4dd6b3bec8b2daead2d226269307bee8"
+    arm64.sha256 = "c36b469a30e87efc6616abd7f8df429de2a11896d311037580ac0b9c2f6b53a6"
     armhf.url = "https://github.com/juanfont/headscale/releases/download/v0.22.3/headscale_0.22.3_linux_armv7"
     armhf.sha256 = "4711fd03c9f5d814eb4c85be9939f167ce7aa40510cda2133c9f63810ead395d"
     armel.url = "https://github.com/juanfont/headscale/releases/download/v0.22.3/headscale_0.22.3_linux_armv5"
     armel.sha256 = "3a983ea320b05372b5493ece01bab1252907e0864a26f1857dbcd7307dfc463f"
 
     autoupdate.strategy = "latest_github_release"
-    autoupdate.asset.i386 = ".*_386"
-    autoupdate.asset.amd64 = ".*_amd64"
-    autoupdate.asset.arm64 = ".*_arm64"
-    autoupdate.asset.armhf = ".*_armv7"
-    autoupdate.asset.armel = ".*_armv5"
+    autoupdate.asset.i386 = ".*_linux_386$"
+    autoupdate.asset.amd64 = ".*_linux_amd64$"
+    autoupdate.asset.arm64 = ".*_linux_arm64$"
+    autoupdate.asset.armhf = ".*_linux_armv7$"
 
     [resources.system_user]
 
