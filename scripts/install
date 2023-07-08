@@ -75,6 +75,10 @@ ynh_add_config --template="config.yaml" --destination="$install_dir/config.yaml"
 chmod 600 "$install_dir/config.yaml"
 chown $app:$app "$install_dir/config.yaml"
 
+# Add dnsmasq configuration to avoid overriding resolvconf
+ynh_add_config --template="dnsmasq" --destination="/etc/dnsmasq.d/$app"
+ynh_systemd_action --service_name="dnsmasq" --action="reload"
+
 #=================================================
 # SETUP SYSTEMD
 #=================================================

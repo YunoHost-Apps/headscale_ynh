@@ -1,0 +1,4 @@
+# Created by __APP__
+# We assume that only one tailscale installation exists on the server, replace `tailscale0` below if needed
+interface=tailscale0
+server=/__BASE_DOMAIN__/100.100.100.100

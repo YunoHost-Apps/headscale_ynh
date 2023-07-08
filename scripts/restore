@@ -47,6 +47,14 @@ ynh_script_progression --message="Restoring the logrotate configuration..." --we
 ynh_restore_file --origin_path="/etc/logrotate.d/$app"
 
 #=================================================
+# RESTORE THE DNSMASQ CONFIGURATION
+#=================================================
+ynh_script_progression --message="Restoring the dnsmasq configuration..." --weight=1
+
+ynh_restore_file --origin_path="/etc/dnsmasq.d/$app"
+ynh_systemd_action --service_name="dnsmasq" --action="reload"
+
+#=================================================
 # INTEGRATE SERVICE IN YUNOHOST
 #=================================================
 ynh_script_progression --message="Integrating service in YunoHost..." --weight=1
