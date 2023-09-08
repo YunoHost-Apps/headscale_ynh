@@ -18,7 +18,7 @@ cpe = "cpe:2.3:a:tailscale:tailscale"
 fund = "https://ko-fi.com/headscale"
 
 [integration]
-yunohost = ">= 11.0.0"
+yunohost = ">= 11.2"
 architectures = "all"
 multi_instance = false
 ldap = true
@@ -38,8 +38,11 @@ ram.runtime = "50M"
 
     [install.dex_path]
     type = "path"
-    ask.en = "Choose the path to install Dex on."
     default = "/dex"
+
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
 
     [install.base_domain]
     type = "string"
