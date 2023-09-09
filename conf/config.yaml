@@ -199,7 +199,9 @@ dns_config:
 
   # List of DNS servers to expose to clients.
   nameservers:
-    - 1.1.1.1
+    - 127.0.0.1
+    - 89.234.141.66
+    - 2a00:5881:8100:1000::3
 
   # NextDNS (see https://tailscale.com/kb/1218/nextdns/).
   # "abc123" is example NextDNS ID, replace with yours.

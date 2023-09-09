@@ -42,6 +42,12 @@ ynh_backup --src_path="/etc/logrotate.d/$app"
 ynh_backup --src_path="/etc/systemd/system/$app.service"
 
 #=================================================
+# BACKUP DNSMASQ CONFIG
+#=================================================
+
+ynh_backup --src_path="/etc/dnsmasq.d/$app"
+
+#=================================================
 # BACKUP THE DATABASE
 #=================================================
 #ynh_print_info --message="Backing up the PostgreSQL database..."

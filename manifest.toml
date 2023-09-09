@@ -18,7 +18,7 @@ cpe = "cpe:2.3:a:tailscale:tailscale"
 fund = "https://ko-fi.com/headscale"
 
 [integration]
-yunohost = ">= 11.0.0"
+yunohost = ">= 11.2"
 architectures = "all"
 multi_instance = false
 ldap = true
@@ -41,10 +41,14 @@ ram.runtime = "50M"
     ask.en = "Choose the path to install Dex on."
     default = "/dex"
 
+    [install.init_main_permission]
+    type = "group"
+    default = "visitors"
+
     [install.base_domain]
-    type = "domain"
+    type = "string"
     ask.en = "Choose the base domain for Headscale's MagicDNS feature"
-    help.en = "MagicDNS will allow you to access your hosts with a domain like `myhost.username.basedomain.tld`"
+    help.en = "MagicDNS will allow you to access your hosts with a domain like `myhost.username.basedomain.tld`. It can be from a fake TLD, but beware of conflicts."
 
 [resources]
     [resources.sources.main]
@@ -58,8 +62,8 @@ ram.runtime = "50M"
     arm64.sha256 = "c36b469a30e87efc6616abd7f8df429de2a11896d311037580ac0b9c2f6b53a6"
     armhf.url = "https://github.com/juanfont/headscale/releases/download/v0.22.3/headscale_0.22.3_linux_armv7"
     armhf.sha256 = "4711fd03c9f5d814eb4c85be9939f167ce7aa40510cda2133c9f63810ead395d"
-    armel.url = "https://github.com/juanfont/headscale/releases/download/v0.22.3/headscale_0.22.3_linux_armv5"
-    armel.sha256 = "3a983ea320b05372b5493ece01bab1252907e0864a26f1857dbcd7307dfc463f"
+    #armel.url = "https://github.com/juanfont/headscale/releases/download/v0.22.3/headscale_0.22.3_linux_armv5"
+    #armel.sha256 = "3a983ea320b05372b5493ece01bab1252907e0864a26f1857dbcd7307dfc463f"
 
     autoupdate.strategy = "latest_github_release"
     autoupdate.asset.i386 = ".*_linux_386$"

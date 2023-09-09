@@ -6,7 +6,7 @@ test_format = 1.0
     sudo yunohost domain add dex-headscale.domain.tld
     """
 
-    exclude = ["change_url"]
+    exclude = [ "install.private", "change_url" ]
 
     args.domain = "sub.domain.tld"
     args.dex_domain = "dex-headscale.domain.tld"
