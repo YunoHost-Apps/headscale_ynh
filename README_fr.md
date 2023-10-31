@@ -75,7 +75,7 @@ open-source organisation.
 * Documentation officielle utilisateur : <https://tailscale.com/kb/>
 * Documentation officielle de l’admin : <https://headscale.net/>
 * Dépôt de code officiel de l’app : <https://github.com/juanfont/headscale>
-* Documentation YunoHost pour cette app : <https://yunohost.org/app_headscale>
+* YunoHost Store: <https://apps.yunohost.org/app/headscale>
 * Signaler un bug : <https://github.com/YunoHost-Apps/headscale_ynh/issues>
 
 ## Informations pour les développeurs
