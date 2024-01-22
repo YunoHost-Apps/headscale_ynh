@@ -62,8 +62,6 @@ ram.runtime = "50M"
     arm64.sha256 = "c36b469a30e87efc6616abd7f8df429de2a11896d311037580ac0b9c2f6b53a6"
     armhf.url = "https://github.com/juanfont/headscale/releases/download/v0.22.3/headscale_0.22.3_linux_armv7"
     armhf.sha256 = "4711fd03c9f5d814eb4c85be9939f167ce7aa40510cda2133c9f63810ead395d"
-    #armel.url = "https://github.com/juanfont/headscale/releases/download/v0.22.3/headscale_0.22.3_linux_armv5"
-    #armel.sha256 = "3a983ea320b05372b5493ece01bab1252907e0864a26f1857dbcd7307dfc463f"
 
     autoupdate.strategy = "latest_github_release"
     autoupdate.asset.i386 = ".*_linux_386$"
@@ -83,6 +81,5 @@ ram.runtime = "50M"
     metrics.default = 9090
     grpc.default = 50443
 
-# Disabled, cf. config file
-#    [resources.database]
-#    type = "postgresql"
+    [resources.apt]
+    packages = "gawk"
