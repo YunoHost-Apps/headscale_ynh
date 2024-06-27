@@ -5,7 +5,7 @@ EZ editatu eskuz.
 
 # Headscale YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/headscale.svg)](https://dash.yunohost.org/appci/app/headscale) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/headscale.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/headscale.maintain.svg)
+[![Integrazio maila](https://dash.yunohost.org/integration/headscale.svg)](https://ci-apps.yunohost.org/ci/apps/headscale/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/headscale.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/headscale.maintain.svg)
 
 [![Instalatu Headscale YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=headscale)
 
