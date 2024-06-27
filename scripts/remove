@@ -70,8 +70,6 @@ fi
 #=================================================
 ynh_script_progression --message="Removing various files..." --weight=1
 
-# Remove the log files
-
 # Remove dnsmasq configuration
 ynh_secure_remove --file="/etc/dnsmasq.d/$app"
 ynh_systemd_action --service_name=dnsmasq --action="reload"
