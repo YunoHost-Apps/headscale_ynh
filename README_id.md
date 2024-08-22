@@ -1,20 +1,20 @@
 <!--
-注意：此 README 由 <https://github.com/YunoHost/apps/tree/master/tools/readme_generator> 自动生成
-请勿手动编辑。
+N.B.: README ini dibuat secara otomatis oleh <https://github.com/YunoHost/apps/tree/master/tools/readme_generator>
+Ini TIDAK boleh diedit dengan tangan.
 -->
 
-# YunoHost 上的 Headscale
+# Headscale untuk YunoHost
 
-[![集成程度](https://dash.yunohost.org/integration/headscale.svg)](https://ci-apps.yunohost.org/ci/apps/headscale/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/headscale.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/headscale.maintain.svg)
+[![Tingkat integrasi](https://dash.yunohost.org/integration/headscale.svg)](https://ci-apps.yunohost.org/ci/apps/headscale/) ![Status kerja](https://ci-apps.yunohost.org/ci/badges/headscale.status.svg) ![Status pemeliharaan](https://ci-apps.yunohost.org/ci/badges/headscale.maintain.svg)
 
-[![使用 YunoHost 安装 Headscale](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=headscale)
+[![Pasang Headscale dengan YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=headscale)
 
-*[阅读此 README 的其它语言版本。](./ALL_README.md)*
+*[Baca README ini dengan bahasa yang lain.](./ALL_README.md)*
 
-> *通过此软件包，您可以在 YunoHost 服务器上快速、简单地安装 Headscale。*  
-> *如果您还没有 YunoHost，请参阅[指南](https://yunohost.org/install)了解如何安装它。*
+> *Paket ini memperbolehkan Anda untuk memasang Headscale secara cepat dan mudah pada server YunoHost.*  
+> *Bila Anda tidak mempunyai YunoHost, silakan berkonsultasi dengan [panduan](https://yunohost.org/install) untuk mempelajari bagaimana untuk memasangnya.*
 
-## 概况
+## Ringkasan
 
 An open source, self-hosted implementation of the Tailscale control server.
 
@@ -68,26 +68,26 @@ open-source organisation.
 *from Headscale's README. See Links section below.*
 
 
-**分发版本：** 0.22.3~ynh2
-## 文档与资源
+**Versi terkirim:** 0.22.3~ynh2
+## Dokumentasi dan sumber daya
 
-- 官方应用网站： <https://headscale.net/>
-- 官方用户文档： <https://tailscale.com/kb/>
-- 官方管理文档： <https://headscale.net/>
-- 上游应用代码库： <https://github.com/juanfont/headscale>
-- YunoHost 商店： <https://apps.yunohost.org/app/headscale>
-- 报告 bug： <https://github.com/YunoHost-Apps/headscale_ynh/issues>
+- Website aplikasi resmi: <https://headscale.net/>
+- Dokumentasi pengguna resmi: <https://tailscale.com/kb/>
+- Dokumentasi admin resmi: <https://headscale.net/>
+- Depot kode aplikasi hulu: <https://github.com/juanfont/headscale>
+- Gudang YunoHost: <https://apps.yunohost.org/app/headscale>
+- Laporkan bug: <https://github.com/YunoHost-Apps/headscale_ynh/issues>
 
-## 开发者信息
+## Info developer
 
-请向 [`testing` 分支](https://github.com/YunoHost-Apps/headscale_ynh/tree/testing) 发送拉取请求。
+Silakan kirim pull request ke [`testing` branch](https://github.com/YunoHost-Apps/headscale_ynh/tree/testing).
 
-如要尝试 `testing` 分支，请这样操作：
+Untuk mencoba branch `testing`, silakan dilanjutkan seperti:
 
 ```bash
 sudo yunohost app install https://github.com/YunoHost-Apps/headscale_ynh/tree/testing --debug
-或
+atau
 sudo yunohost app upgrade headscale -u https://github.com/YunoHost-Apps/headscale_ynh/tree/testing --debug
 ```
 
-**有关应用打包的更多信息：** <https://yunohost.org/packaging_apps>
+**Info lebih lanjut mengenai pemaketan aplikasi:** <https://yunohost.org/packaging_apps>
