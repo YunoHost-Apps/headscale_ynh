@@ -1,6 +1,8 @@
 [Unit]
 Description=Control server for the WireGuard-based VPN
 After=network.target
+Requires=nginx.service
+Before=dnsmasq.service
 
 [Service]
 Type=simple
