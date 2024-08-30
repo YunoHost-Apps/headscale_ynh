@@ -1,11 +1,5 @@
 #!/bin/bash
 
-#=================================================
-# GENERIC START
-#=================================================
-# IMPORT GENERIC HELPERS
-#=================================================
-
 source _common.sh
 source /usr/share/yunohost/helpers
 
@@ -16,40 +10,40 @@ source /usr/share/yunohost/helpers
 #=================================================
 
 # Remove the service from the list of services known by YunoHost (added from `yunohost service add`)
-if ynh_exec_warn_less yunohost service status $app >/dev/null
+if ynh_hide_warnings yunohost service status $app >/dev/null
 then
-	ynh_script_progression --message="Removing $app service integration..." --weight=1
+	ynh_script_progression "Removing $app service integration..."
 	yunohost service remove $app
 fi
 
 #=================================================
 # STOP AND REMOVE SERVICE
 #=================================================
-ynh_script_progression --message="Stopping and removing the systemd service..." --weight=1
+ynh_script_progression "Stopping and removing the systemd service..."
 
 # Remove the dedicated systemd config
-ynh_remove_systemd_config
+ynh_config_remove_systemd
 
 #=================================================
 # REMOVE LOGROTATE CONFIGURATION
 #=================================================
-ynh_script_progression --message="Removing logrotate configuration..." --weight=1
+ynh_script_progression "Removing logrotate configuration..."
 
 # Remove the app-specific logrotate config
-ynh_remove_logrotate
+ynh_config_remove_logrotate
 
 #=================================================
 # REMOVE NGINX CONFIGURATION
 #=================================================
-ynh_script_progression --message="Removing NGINX web server configuration..." --weight=1
+ynh_script_progression "Removing NGINX web server configuration..."
 
 # Remove the dedicated NGINX config
-ynh_remove_nginx_config
+ynh_config_remove_nginx
 
 #=================================================
 # REMOVE DEX APP
 #=================================================
-ynh_script_progression --message="Removing Dex app used for Headscale authentication..." --weight=1
+ynh_script_progression "Removing Dex app used for Headscale authentication..."
 
 yunohost app remove $dex_app
 
@@ -59,8 +53,8 @@ yunohost app remove $dex_app
 
 if yunohost firewall list | grep -q "\- $port$"
 then
-	ynh_script_progression --message="Closing port $port..." --weight=1
-	ynh_exec_warn_less yunohost firewall disallow TCP $port
+	ynh_script_progression "Closing port $port..."
+	ynh_hide_warnings yunohost firewall disallow TCP $port
 fi
 
 #=================================================
@@ -68,18 +62,16 @@ fi
 #=================================================
 # REMOVE VARIOUS FILES
 #=================================================
-ynh_script_progression --message="Removing various files..." --weight=1
+ynh_script_progression "Removing various files..."
 
 # Remove dnsmasq configuration
-ynh_secure_remove --file="/etc/dnsmasq.d/$app"
-ynh_systemd_action --service_name=dnsmasq --action="reload"
+ynh_safe_rm "/etc/dnsmasq.d/$app"
+ynh_systemctl --service=dnsmasq --action="reload"
 
-#=================================================
-# GENERIC FINALIZATION
 #=================================================
 
 #=================================================
 # END OF SCRIPT
 #=================================================
 
-ynh_script_progression --message="Removal of $app completed" --last
+ynh_script_progression "Removal of $app completed"
