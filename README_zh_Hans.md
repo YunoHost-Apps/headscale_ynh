@@ -68,7 +68,7 @@ open-source organisation.
 *from Headscale's README. See Links section below.*
 
 
-**分发版本：** 0.22.3~ynh2
+**分发版本：** 0.22.3~ynh3
 ## 文档与资源
 
 - 官方应用网站： <https://headscale.net/>
