@@ -4,7 +4,7 @@ id = "headscale"
 name = "Headscale"
 description.en = "Open-source implementation of the Tailscale control server, a WireGuard-based VPN"
 
-version = "0.22.3~ynh2"
+version = "0.22.3~ynh3"
 
 maintainers = ["tituspijean"]
 
@@ -41,10 +41,6 @@ ram.runtime = "50M"
     ask.en = "Choose the path to install Dex on."
     default = "/dex"
 
-    [install.init_main_permission]
-    type = "group"
-    default = "visitors"
-
     [install.base_domain]
     type = "string"
     ask.en = "Choose the base domain for Headscale's MagicDNS feature"
@@ -75,6 +71,9 @@ ram.runtime = "50M"
 
     [resources.permissions]
     main.url = "/"
+    main.show_tile = false
+    main.allowed = "visitors"
+    main.protected = true
 
     [resources.ports]
     main.default = 8080
