@@ -1,20 +1,20 @@
 <!--
-Este archivo README esta generado automaticamente<https://github.com/YunoHost/apps/tree/master/tools/readme_generator>
-No se debe editar a mano.
+NB: Deze README is automatisch gegenereerd door <https://github.com/YunoHost/apps/tree/master/tools/readme_generator>
+Hij mag NIET handmatig aangepast worden.
 -->
 
-# Headscale para Yunohost
+# Headscale voor Yunohost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/headscale.svg)](https://ci-apps.yunohost.org/ci/apps/headscale/) ![Estado funcional](https://ci-apps.yunohost.org/ci/badges/headscale.status.svg) ![Estado En Mantención](https://ci-apps.yunohost.org/ci/badges/headscale.maintain.svg)
+[![Integratieniveau](https://dash.yunohost.org/integration/headscale.svg)](https://ci-apps.yunohost.org/ci/apps/headscale/) ![Mate van functioneren](https://ci-apps.yunohost.org/ci/badges/headscale.status.svg) ![Onderhoudsstatus](https://ci-apps.yunohost.org/ci/badges/headscale.maintain.svg)
 
-[![Instalar Headscale con Yunhost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=headscale)
+[![Headscale met Yunohost installeren](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=headscale)
 
-*[Leer este README en otros idiomas.](./ALL_README.md)*
+*[Deze README in een andere taal lezen.](./ALL_README.md)*
 
-> *Este paquete le permite instalarHeadscale rapidamente y simplement en un servidor YunoHost.*  
-> *Si no tiene YunoHost, visita [the guide](https://yunohost.org/install) para aprender como instalarla.*
+> *Met dit pakket kun je Headscale snel en eenvoudig op een YunoHost-server installeren.*  
+> *Als je nog geen YunoHost hebt, lees dan [de installatiehandleiding](https://yunohost.org/install), om te zien hoe je 'm installeert.*
 
-## Descripción general
+## Overzicht
 
 An open source, self-hosted implementation of the Tailscale control server.
 
@@ -68,26 +68,26 @@ open-source organisation.
 *from Headscale's README. See Links section below.*
 
 
-**Versión actual:** 0.23.0~ynh1
-## Documentaciones y recursos
+**Geleverde versie:** 0.23.0~ynh1
+## Documentatie en bronnen
 
-- Sitio web oficial: <https://headscale.net/>
-- Documentación usuario oficial: <https://tailscale.com/kb/>
-- Documentación administrador oficial: <https://headscale.net/>
-- Repositorio del código fuente oficial de la aplicación : <https://github.com/juanfont/headscale>
-- Catálogo YunoHost: <https://apps.yunohost.org/app/headscale>
-- Reportar un error: <https://github.com/YunoHost-Apps/headscale_ynh/issues>
+- Officiele website van de app: <https://headscale.net/>
+- Officiele gebruikersdocumentatie: <https://tailscale.com/kb/>
+- Officiele beheerdersdocumentatie: <https://headscale.net/>
+- Upstream app codedepot: <https://github.com/juanfont/headscale>
+- YunoHost-store: <https://apps.yunohost.org/app/headscale>
+- Meld een bug: <https://github.com/YunoHost-Apps/headscale_ynh/issues>
 
-## Información para desarrolladores
+## Ontwikkelaarsinformatie
 
-Por favor enviar sus correcciones a la [rama `testing`](https://github.com/YunoHost-Apps/headscale_ynh/tree/testing).
+Stuur je pull request alsjeblieft naar de [`testing`-branch](https://github.com/YunoHost-Apps/headscale_ynh/tree/testing).
 
-Para probar la rama `testing`, sigue asÍ:
+Om de `testing`-branch uit te proberen, ga als volgt te werk:
 
 ```bash
 sudo yunohost app install https://github.com/YunoHost-Apps/headscale_ynh/tree/testing --debug
-o
+of
 sudo yunohost app upgrade headscale -u https://github.com/YunoHost-Apps/headscale_ynh/tree/testing --debug
 ```
 
-**Mas informaciones sobre el empaquetado de aplicaciones:** <https://yunohost.org/packaging_apps>
+**Verdere informatie over app-packaging:** <https://yunohost.org/packaging_apps>
