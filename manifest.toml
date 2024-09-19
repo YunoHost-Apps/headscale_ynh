@@ -4,7 +4,7 @@ id = "headscale"
 name = "Headscale"
 description.en = "Open-source implementation of the Tailscale control server, a WireGuard-based VPN"
 
-version = "0.22.3~ynh3"
+version = "0.23.0~ynh1"
 
 maintainers = ["tituspijean"]
 
@@ -50,14 +50,14 @@ ram.runtime = "50M"
     [resources.sources.main]
     rename = "headscale"
 
-    i386.url = "https://github.com/juanfont/headscale/releases/download/v0.22.3/headscale_0.22.3_linux_386"
-    i386.sha256 = "5e1c23c2ca269041d1040e273d9f164c3703d3b7c38aea5a293c8059b24d9712"
-    amd64.url = "https://github.com/juanfont/headscale/releases/download/v0.22.3/headscale_0.22.3_linux_amd64"
-    amd64.sha256 = "41eb475ba94d2f4efdd5b90ca76d3926a0fc0b561baabf6190ca32335c9102d2"
-    arm64.url = "https://github.com/juanfont/headscale/releases/download/v0.22.3/headscale_0.22.3_linux_arm64"
-    arm64.sha256 = "c36b469a30e87efc6616abd7f8df429de2a11896d311037580ac0b9c2f6b53a6"
-    armhf.url = "https://github.com/juanfont/headscale/releases/download/v0.22.3/headscale_0.22.3_linux_armv7"
-    armhf.sha256 = "4711fd03c9f5d814eb4c85be9939f167ce7aa40510cda2133c9f63810ead395d"
+    i386.url = "https://github.com/juanfont/headscale/releases/download/v0.23.0/headscale_0.23.0_linux_386"
+    i386.sha256 = "1be6e0df6dd013ced010537cc393674b629d0a9b9554ab0484b84153093ed508"
+    amd64.url = "https://github.com/juanfont/headscale/releases/download/v0.23.0/headscale_0.23.0_linux_amd64"
+    amd64.sha256 = "d9193dad4b070b9b3f6d54c8f14366952944b6e917672c0bc1dfd8f5491287a7"
+    arm64.url = "https://github.com/juanfont/headscale/releases/download/v0.23.0/headscale_0.23.0_linux_arm64"
+    arm64.sha256 = "99fa9b2944c50759882b578e78aa11968d6fdec9bbfeced88237a1138b89e9fe"
+    armhf.url = "https://github.com/juanfont/headscale/releases/download/v0.23.0/headscale_0.23.0_linux_armv7"
+    armhf.sha256 = "c6c285d6b054bfcf74c8afa6b4561d4b1cb00fd0e4dea26bc6fe616498e2c77d"
 
     autoupdate.strategy = "latest_github_release"
     autoupdate.asset.i386 = ".*_linux_386$"
