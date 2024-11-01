@@ -220,7 +220,7 @@ policy:
   mode: file
   # If the mode is set to "file", the path to a
   # HuJSON file containing ACL policies.
-  path: ""
+  path: "__INSTALL_DIR__/acl.hujson"
 
 ## DNS
 #
