@@ -57,9 +57,14 @@ noise:
 # See below:
 # IPv6: https://github.com/tailscale/tailscale/blob/22ebb25e833264f58d7c3f534a8b166894a89536/net/tsaddr/tsaddr.go#LL81C52-L81C71
 # IPv4: https://github.com/tailscale/tailscale/blob/22ebb25e833264f58d7c3f534a8b166894a89536/net/tsaddr/tsaddr.go#L33
-ip_prefixes:
-  - fd7a:115c:a1e0::/48
-  - 100.64.0.0/10
+prefixes:
+  v6: fd7a:115c:a1e0::/48
+  v4: 100.64.0.0/10
+
+  # Strategy used for allocation of IPs to nodes, available options:
+  # - sequential (default): assigns the next free IP from the previous given IP.
+  # - random: assigns the next free IP from a pseudo-random IP generator (crypto/rand).
+  allocation: sequential
 
 # DERP is a relay system that Tailscale uses when a direct
 # connection cannot be established.
@@ -220,7 +225,7 @@ policy:
   mode: file
   # If the mode is set to "file", the path to a
   # HuJSON file containing ACL policies.
-  path: "__INSTALL_DIR__/acl.hujson"
+  path: ""
 
 ## DNS
 #
@@ -243,7 +248,7 @@ policy:
 #
 # If you want stop Headscale from managing the DNS configuration
 # all the fields under `dns` should be set to empty values.
-dns_config:
+dns:
   # Whether to use [MagicDNS](https://tailscale.com/kb/1081/magicdns/).
   magic_dns: true
 
