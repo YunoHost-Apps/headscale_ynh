@@ -60,6 +60,13 @@ ynh_add_nginx_config
 # UPDATE A CONFIG FILE
 #=================================================
 # We do not alter the configuration file since admins are encouraged to fine-tune it.
+# Except for this one time:
+if ynh_app_upgrading_from_version_before 0.23.0~ynh1; then
+    ynh_add_config --template="config.yaml" --destination="$install_dir/config.yaml"
+    
+    chmod 600 "$install_dir/config.yaml"
+    chown $app:$app "$install_dir/config.yaml"
+fi
 
 #=================================================
 # SETUP SYSTEMD
