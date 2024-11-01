@@ -7,6 +7,7 @@ Type=simple
 User=__APP__
 Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
+ExecStartPre=+/bin/bash -c 'ethtool -K $(ip -o route get 8.8.8.8 | cut -f 5 -d " ") rx-udp-gro-forwarding on rx-gro-list off'
 ExecStart=__INSTALL_DIR__/headscale serve
 StandardOutput=append:/var/log/__APP__/__APP__.log
 StandardError=inherit
