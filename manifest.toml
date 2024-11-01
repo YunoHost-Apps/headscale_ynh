@@ -79,9 +79,6 @@ ram.runtime = "50M"
     main.default = 8080
     metrics.default = 9090
     grpc.default = 50443
-    client.default = 41641
-    client.fixed = true
-    client.exposed = "UDP"
     stun.default = 3478
     stun.exposed = "UDP"
 
