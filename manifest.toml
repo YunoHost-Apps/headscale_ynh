@@ -2,7 +2,8 @@ packaging_format = 2
 
 id = "headscale"
 name = "Headscale"
-description.en = "Open-source implementation of the Tailscale control server, a WireGuard-based VPN"
+description.en = "Tailscale control server implementation, a WireGuard-based VPN"
+description.fr = "Implémentation du serveur de contrôle Tailscale, un VPN basé sur WireGuard"
 
 version = "0.22.3~ynh2"
 
@@ -18,7 +19,7 @@ cpe = "cpe:2.3:a:tailscale:tailscale"
 fund = "https://ko-fi.com/headscale"
 
 [integration]
-yunohost = ">= 11.2.18"
+yunohost = ">= 11.2.30"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = false
@@ -34,12 +35,15 @@ ram.runtime = "50M"
 
     [install.dex_domain]
     type = "domain"
-    ask.en = "Choose the domain to install Dex on."
+    ask.en = "Choose the domain to install Dex on"
+    ask.fr = "Choisissez le domaine sur lequel installer Dex"
     help.en = "It should be different than Headscale's domain"
+    help.fr = "Cela devrait être différent du domaine de Headscale"
 
     [install.dex_path]
     type = "path"
-    ask.en = "Choose the path to install Dex on."
+    ask.en = "Choose the path to install Dex on"
+    ask.fr = "Choisissez le chemin sur lequel installer Dex"
     default = "/dex"
 
     [install.init_main_permission]
@@ -49,7 +53,9 @@ ram.runtime = "50M"
     [install.base_domain]
     type = "string"
     ask.en = "Choose the base domain for Headscale's MagicDNS feature"
+    ask.fr = "Choisissez le domaine de base pour la fonctionnalité MagicDNS de Headscale"
     help.en = "MagicDNS will allow you to access your hosts with a domain like `myhost.username.basedomain.tld`. It can be from a fake TLD, but beware of conflicts."
+    help.fr = "MagicDNS vous permettra d'accéder à vos hôtes avec un domaine tel que 'monhôte.nomutilisateur.domainedebase.tld'. Il peut s'agir d'un faux TLD, mais attention aux conflits."
 
 [resources]
     [resources.sources.main]
