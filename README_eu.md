@@ -68,7 +68,7 @@ open-source organisation.
 *from Headscale's README. See Links section below.*
 
 
-**Paketatutako bertsioa:** 0.22.3~ynh2
+**Paketatutako bertsioa:** 0.23.0~ynh2
 ## Dokumentazioa eta baliabideak
 
 - Aplikazioaren webgune ofiziala: <https://headscale.net/>

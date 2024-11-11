@@ -10,4 +10,4 @@ Some technical notes:
 - Headscale will push DNS servers to its clients. The configuration includes FDN's open resolvers. ([French Data Network](https://www.fdn.fr/actions/dns/), associative ISP)
 
 To create users and connect clients, refer to Headscale's documentation.
-To call Headscale's program, use `sudo -u bash __INSTALL_DIR/headscale` followed by its parameters.
+To call Headscale's program, open a dedicated shell with `yunohost app shell __APP__` then call it with `./headscale -c config.yaml`, followed by its parameters.
