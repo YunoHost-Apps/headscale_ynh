@@ -70,7 +70,7 @@ open-source organisation.
 *from Headscale's README. See Links section below.*
 
 
-**Versi terkirim:** 0.23.0~ynh3
+**Versi terkirim:** 0.23.0~ynh4
 ## Dokumentasi dan sumber daya
 
 - Website aplikasi resmi: <https://headscale.net/>
