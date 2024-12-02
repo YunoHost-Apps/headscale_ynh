@@ -5,7 +5,9 @@ Il NE doit PAS être modifié à la main.
 
 # Headscale pour YunoHost
 
-[![Niveau d’intégration](https://dash.yunohost.org/integration/headscale.svg)](https://ci-apps.yunohost.org/ci/apps/headscale/) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/headscale.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/headscale.maintain.svg)
+[![Niveau d’intégration](https://apps.yunohost.org/badge/integration/headscale)](https://ci-apps.yunohost.org/ci/apps/headscale/)
+![Statut du fonctionnement](https://apps.yunohost.org/badge/state/headscale)
+![Statut de maintenance](https://apps.yunohost.org/badge/maintained/headscale)
 
 [![Installer Headscale avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=headscale)
 

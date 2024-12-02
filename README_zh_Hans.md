@@ -5,7 +5,9 @@
 
 # YunoHost 上的 Headscale
 
-[![集成程度](https://dash.yunohost.org/integration/headscale.svg)](https://ci-apps.yunohost.org/ci/apps/headscale/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/headscale.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/headscale.maintain.svg)
+[![集成程度](https://apps.yunohost.org/badge/integration/headscale)](https://ci-apps.yunohost.org/ci/apps/headscale/)
+![工作状态](https://apps.yunohost.org/badge/state/headscale)
+![维护状态](https://apps.yunohost.org/badge/maintained/headscale)
 
 [![使用 YunoHost 安装 Headscale](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=headscale)
 

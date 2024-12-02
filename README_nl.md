@@ -5,7 +5,9 @@ Hij mag NIET handmatig aangepast worden.
 
 # Headscale voor Yunohost
 
-[![Integratieniveau](https://dash.yunohost.org/integration/headscale.svg)](https://ci-apps.yunohost.org/ci/apps/headscale/) ![Mate van functioneren](https://ci-apps.yunohost.org/ci/badges/headscale.status.svg) ![Onderhoudsstatus](https://ci-apps.yunohost.org/ci/badges/headscale.maintain.svg)
+[![Integratieniveau](https://apps.yunohost.org/badge/integration/headscale)](https://ci-apps.yunohost.org/ci/apps/headscale/)
+![Mate van functioneren](https://apps.yunohost.org/badge/state/headscale)
+![Onderhoudsstatus](https://apps.yunohost.org/badge/maintained/headscale)
 
 [![Headscale met Yunohost installeren](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=headscale)
 
