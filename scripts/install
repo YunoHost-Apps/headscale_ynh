@@ -54,10 +54,6 @@ ynh_script_progression "Adding $app's configuration..."
 
 ynh_config_add --template="config.yaml" --destination="$install_dir/config.yaml"
 
-# Add dnsmasq configuration to avoid overriding resolvconf
-ynh_config_add --template="dnsmasq" --destination="/etc/dnsmasq.d/$app"
-ynh_systemctl --service="dnsmasq" --action="reload"
-
 #=================================================
 # SYSTEM CONFIGURATION
 #=================================================

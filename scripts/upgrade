@@ -9,9 +9,8 @@ source /usr/share/yunohost/helpers
 ynh_script_progression "Ensuring downward compatibility..."
 
 if [ ! -f "/etc/dnsmasq.d/$app" ]; then
-	# Add dnsmasq configuration to avoid overriding resolvconf
-	ynh_config_add --template="dnsmasq" --destination="/etc/dnsmasq.d/$app"
-	ynh_systemctl --service="dnsmasq" --action="reload"
+	# Remove deprecated dnsmasq config file that led to issues
+	ynh_safe_rm "/etc/dnsmasq.d/$app"
 fi
 
 #=================================================
