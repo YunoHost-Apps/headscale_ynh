@@ -5,7 +5,9 @@ NON debe editarse manualmente.
 
 # Headscale para YunoHost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/headscale.svg)](https://ci-apps.yunohost.org/ci/apps/headscale/) ![Estado de funcionamento](https://ci-apps.yunohost.org/ci/badges/headscale.status.svg) ![Estado de mantemento](https://ci-apps.yunohost.org/ci/badges/headscale.maintain.svg)
+[![Nivel de integración](https://apps.yunohost.org/badge/integration/headscale)](https://ci-apps.yunohost.org/ci/apps/headscale/)
+![Estado de funcionamento](https://apps.yunohost.org/badge/state/headscale)
+![Estado de mantemento](https://apps.yunohost.org/badge/maintained/headscale)
 
 [![Instalar Headscale con YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=headscale)
 
@@ -68,7 +70,7 @@ open-source organisation.
 *from Headscale's README. See Links section below.*
 
 
-**Versión proporcionada:** 0.23.0~ynh3
+**Versión proporcionada:** 0.23.0~ynh4
 ## Documentación e recursos
 
 - Web oficial da app: <https://headscale.net/>
