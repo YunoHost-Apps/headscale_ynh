@@ -4,16 +4,6 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# ENSURE DOWNWARD COMPATIBILITY
-#=================================================
-ynh_script_progression "Ensuring downward compatibility..."
-
-if [ ! -f "/etc/dnsmasq.d/$app" ]; then
-	# Remove deprecated dnsmasq config file that led to issues
-	ynh_safe_rm "/etc/dnsmasq.d/$app"
-fi
-
-#=================================================
 # STOP SYSTEMD SERVICE
 #=================================================
 ynh_script_progression "Stopping $app's systemd service..."
@@ -39,6 +29,11 @@ if ynh_app_upgrading_from_version_before 0.23.0~ynh3; then
     
     chmod 600 "$install_dir/config.yaml"
     chown $app:$app "$install_dir/config.yaml"
+fi
+
+# Remove deprecated dnsmasq config file that led to issues
+if ynh_app_upgrading_from_version_before 0.23.0~ynh4; then
+    ynh_safe_rm "/etc/dnsmasq.d/$app"
 fi
 
 #=================================================
