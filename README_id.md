@@ -5,7 +5,9 @@ Ini TIDAK boleh diedit dengan tangan.
 
 # Headscale untuk YunoHost
 
-[![Tingkat integrasi](https://dash.yunohost.org/integration/headscale.svg)](https://ci-apps.yunohost.org/ci/apps/headscale/) ![Status kerja](https://ci-apps.yunohost.org/ci/badges/headscale.status.svg) ![Status pemeliharaan](https://ci-apps.yunohost.org/ci/badges/headscale.maintain.svg)
+[![Tingkat integrasi](https://apps.yunohost.org/badge/integration/headscale)](https://ci-apps.yunohost.org/ci/apps/headscale/)
+![Status kerja](https://apps.yunohost.org/badge/state/headscale)
+![Status pemeliharaan](https://apps.yunohost.org/badge/maintained/headscale)
 
 [![Pasang Headscale dengan YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=headscale)
 
@@ -68,7 +70,7 @@ open-source organisation.
 *from Headscale's README. See Links section below.*
 
 
-**Versi terkirim:** 0.23.0~ynh3
+**Versi terkirim:** 0.23.0~ynh4
 ## Dokumentasi dan sumber daya
 
 - Website aplikasi resmi: <https://headscale.net/>
