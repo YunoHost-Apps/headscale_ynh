@@ -71,7 +71,6 @@ open-source organisation.
 
 
 **Versión proporcionada:** 0.24.0~ynh1
-
 ## Documentación e recursos
 
 - Web oficial da app: <https://headscale.net/>

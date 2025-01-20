@@ -71,7 +71,6 @@ open-source organisation.
 
 
 **Versi terkirim:** 0.24.0~ynh1
-
 ## Dokumentasi dan sumber daya
 
 - Website aplikasi resmi: <https://headscale.net/>

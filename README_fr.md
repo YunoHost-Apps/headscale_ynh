@@ -71,7 +71,6 @@ open-source organisation.
 
 
 **Version incluse :** 0.24.0~ynh1
-
 ## Documentations et ressources
 
 - Site officiel de l’app : <https://headscale.net/>

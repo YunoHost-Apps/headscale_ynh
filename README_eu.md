@@ -71,7 +71,6 @@ open-source organisation.
 
 
 **Paketatutako bertsioa:** 0.24.0~ynh1
-
 ## Dokumentazioa eta baliabideak
 
 - Aplikazioaren webgune ofiziala: <https://headscale.net/>
