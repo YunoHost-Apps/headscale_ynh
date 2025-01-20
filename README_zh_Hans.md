@@ -71,6 +71,7 @@ open-source organisation.
 
 
 **分发版本：** 0.24.0~ynh1
+
 ## 文档与资源
 
 - 官方应用网站： <https://headscale.net/>
