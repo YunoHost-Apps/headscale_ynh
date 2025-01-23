@@ -70,7 +70,7 @@ open-source organisation.
 *from Headscale's README. See Links section below.*
 
 
-**分发版本：** 0.24.0~ynh1
+**分发版本：** 0.24.1~ynh1
 ## 文档与资源
 
 - 官方应用网站： <https://headscale.net/>
