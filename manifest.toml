@@ -5,7 +5,7 @@ name = "Headscale"
 description.en = "Tailscale control server implementation, a WireGuard-based VPN"
 description.fr = "Implémentation du serveur de contrôle Tailscale, un VPN basé sur WireGuard"
 
-version = "0.24.0~ynh1"
+version = "0.24.1~ynh1"
 
 maintainers = ["tituspijean"]
 
@@ -57,14 +57,14 @@ ram.runtime = "50M"
     [resources.sources.main]
     rename = "headscale"
 
-    i386.url = "https://github.com/juanfont/headscale/releases/download/v0.24.0/headscale_0.24.0_linux_386"
-    i386.sha256 = "2136beceb84fc958482c32a24c7984144aa136cc04da606e39ba5a9b3f798450"
-    amd64.url = "https://github.com/juanfont/headscale/releases/download/v0.24.0/headscale_0.24.0_linux_amd64"
-    amd64.sha256 = "1143c5195d7cb19b0b7533cfbfcaa24ae26f1d45b56b4af8aa27bc8f2d0e700b"
-    arm64.url = "https://github.com/juanfont/headscale/releases/download/v0.24.0/headscale_0.24.0_linux_arm64"
-    arm64.sha256 = "076bf2c34f86640a0435c3d36902a7d0e191b430142a1ed045bc33fc3efccc81"
-    armhf.url = "https://github.com/juanfont/headscale/releases/download/v0.24.0/headscale_0.24.0_linux_armv7"
-    armhf.sha256 = "177f5cea367410a67f9308265b25b9bef82c424a4d32bd02cdf1e2c66aabc1d4"
+    i386.url = "https://github.com/juanfont/headscale/releases/download/v0.24.1/headscale_0.24.1_linux_386"
+    i386.sha256 = "05fbba633d05acb2818b31a825688fe41a5b9b04294d03e87be194c3455b5c2a"
+    amd64.url = "https://github.com/juanfont/headscale/releases/download/v0.24.1/headscale_0.24.1_linux_amd64"
+    amd64.sha256 = "28540f5bed81e574dd99b3100ee2fa932ecbb68c6ac093a86f2fc32cb07ff731"
+    arm64.url = "https://github.com/juanfont/headscale/releases/download/v0.24.1/headscale_0.24.1_linux_arm64"
+    arm64.sha256 = "bf9e94e1caf95f1d67668633f68a4c3bbb4432769b1f8651a501a3f26f6b76ca"
+    armhf.url = "https://github.com/juanfont/headscale/releases/download/v0.24.1/headscale_0.24.1_linux_armv7"
+    armhf.sha256 = "fc547e9a8ba173a8a7f4b42c21eae2586b1d7d22752f017e7ca676162d7613ee"
 
     autoupdate.strategy = "latest_github_release"
     autoupdate.asset.i386 = ".*_linux_386$"
