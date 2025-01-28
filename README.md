@@ -70,7 +70,7 @@ open-source organisation.
 *from Headscale's README. See Links section below.*
 
 
-**Shipped version:** 0.24.0~ynh1
+**Shipped version:** 0.24.1~ynh1
 ## Documentation and resources
 
 - Official app website: <https://headscale.net/>
