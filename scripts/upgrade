@@ -38,7 +38,7 @@ fi
 
 # Comment out a deprecated configuration line
 if ynh_app_upgrading_from_version_before 0.24.2~ynh2; then
-    ynh_replace --match"  use_username_in_magic_dns: .*" --replace="  # use_username_in_magic_dns: false" --file="$install_dir/config.yaml"
+    ynh_replace --match=" use_username_in_magic_dns: .*" --replace="  # use_username_in_magic_dns: false" --file="$install_dir/config.yaml"
 fi
 
 #=================================================
