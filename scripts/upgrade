@@ -36,6 +36,11 @@ if ynh_app_upgrading_from_version_before 0.23.0~ynh4; then
     ynh_safe_rm "/etc/dnsmasq.d/$app"
 fi
 
+# Comment out a deprecated configuration line
+if ynh_app_upgrading_from_version_before 0.24.2~ynh2; then
+    ynh_replace_string --match_string="  use_username_in_magic_dns: .*" --replace_string="  # use_username_in_magic_dns: false" --target_file="$install_dir/config.yaml"
+fi
+
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
