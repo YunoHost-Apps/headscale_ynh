@@ -1,6 +1,12 @@
+#:schema https://raw.githubusercontent.com/YunoHost/apps/master/schemas/tests.v1.schema.json
+
 test_format = 1.0
 
 [default]
+
+    # ------------
+    # Tests to run
+    # ------------
 
     preinstall = """
     sudo yunohost domain add dex-headscale.domain.tld
@@ -8,7 +14,17 @@ test_format = 1.0
 
     exclude = [ "install.private", "change_url" ]
 
+    # -------------------------------
+    # Default args to use for install
+    # -------------------------------
+
     args.domain = "sub.domain.tld"
     args.dex_domain = "dex-headscale.domain.tld"
     args.dex_path = "/dex"
     args.base_domain = "sub.domain.tld"
+
+    # -------------------------------
+    # Commits to test upgrade from
+    # -------------------------------
+
+    test_upgrade_from.39d7410baadb32a1f9ae5cece7af39a1206327eb.name = "Upgrade from 0.25.0~ynh1"
