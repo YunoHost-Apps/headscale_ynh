@@ -90,4 +90,4 @@ ram.runtime = "50M"
     stun.exposed = "UDP"
 
     [resources.apt]
-    packages = "ethtool, gawk"
+    packages = "ethtool"
