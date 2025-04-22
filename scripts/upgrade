@@ -41,6 +41,9 @@ if ynh_app_upgrading_from_version_before 0.24.2~ynh2; then
     ynh_replace --match=" use_username_in_magic_dns: .*" --replace="  # use_username_in_magic_dns: false" --file="$install_dir/config.yaml"
 fi
 
+# Set the dex_app variable if it's missing, by finding the app whose domain_path is $dex_domain$dex_path
+ynh_app_setting_set_default --key="dex_app" --value=$(yunohost app list -f --output-as json | jq --arg domain_path "$dex_domain$dex_path" -r '.apps[] | select(.domain_path == $domain_path).id')
+
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
