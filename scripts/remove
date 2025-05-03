@@ -18,7 +18,8 @@ ynh_config_remove_logrotate
 
 ynh_config_remove_nginx
 
-yunohost app remove $dex_app
+# Remove dex configuration
+ynh_safe_rm "$dex_install_dir/config.yaml.d/$app"
 
 if yunohost firewall list | grep -q "\- $port$"
 then
@@ -28,7 +29,6 @@ fi
 
 # Remove dnsmasq configuration
 ynh_safe_rm "/etc/dnsmasq.d/$app"
-
 ynh_systemctl --service=dnsmasq --action="reload"
 
 #=================================================

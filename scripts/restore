@@ -27,6 +27,25 @@ ynh_restore "/etc/logrotate.d/$app"
 yunohost service add $app --description="Control server for the WireGuard-based VPN" --log="/var/log/$app/$app.log"
 
 #=================================================
+# SETUP DEX FOR OIDC
+#=================================================
+
+dex_apps=$(yunohost app list -f --output-as json | jq -r '[ .apps[] | select(.manifest.id == "dex").id ]')
+firt_dex=$(jq -r 'sort_by(.id) | first.id' <<< $dex_apps)
+
+if [ $(jq -r '[ .[] | select(.manifest.id == "dex").id ] | length' <<< $dex_apps) -eq 0 ]
+then
+    ynh_die "The apps needs at least one Dex instance to be installed. Restore it or install one first."
+elif [ $first_dex != $dex ]
+then
+    ynh_print_warn "The $dex app initially set up for $app has not been found. Reconfiguring with $first_dex"
+    dex=$first_dex
+    ynh_app_setting_set --key=dex --value=$dex
+fi
+
+setup_dex
+
+#=================================================
 # RELOAD NGINX AND PHP-FPM OR THE APP SERVICE
 #=================================================
 ynh_script_progression "Reloading NGINX web server and $app's service..."

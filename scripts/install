@@ -4,43 +4,10 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# INSTALL DEX FOR OIDC
+# SETUP DEX FOR OIDC
 #=================================================
-ynh_script_progression "Installing Dex..."
 
-oidc_secret="$(echo $(ynh_string_random --length=32 --filter='A-F0-9'))"
-oidc_name="$app"
-oidc_callback="$domain/oidc/callback"
-
-if yunohost app list | grep -q "$dex_domain$dex_path"; then
-	ynh_die "The domain and path provided for Dex is already used by another app. Please choose another one!"
-fi
-
-yunohost app install https://github.com/YunoHost-Apps/dex_ynh --force --args "domain=$dex_domain&path=$dex_path&oidc_name=$oidc_name&oidc_secret=$oidc_secret&oidc_callback=$oidc_callback" 2>&1 | tee dexlog.txt
-dex_app=$(grep -Po 'Installation of\s+\K.*(?=\s+completed)' dexlog.txt)
-rm dexlog.txt
-
-if [ -z "$dex_app" ]; then
-  ynh_die "Dex package installation failed"
-fi
-
-# Create Dex URIs
-if [ $dex_path = "/" ]
-then
-	dex_auth_uri="https://$dex_domain/auth"
-	dex_token_uri="https://$dex_domain/token"
-	dex_user_uri="https://$dex_domain/userinfo"
-else
-	dex_auth_uri="https://$dex_domain$dex_path/auth"
-	dex_token_uri="https://$dex_domain$dex_path/token"
-	dex_user_uri="https://$dex_domain$dex_path/userinfo"
-fi
-
-# Store Dex settings
-ynh_app_setting_set --key=oidc_secret   --value=$oidc_secret
-ynh_app_setting_set --key=oidc_name     --value=$oidc_name
-ynh_app_setting_set --key=oidc_callback --value=$oidc_callback
-ynh_app_setting_set --key=dex_app       --value=$dex_app
+setup_dex
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
