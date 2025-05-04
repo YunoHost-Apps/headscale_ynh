@@ -30,7 +30,7 @@ chmod -R ug+x "$install_dir/headscale"
 #=================================================
 # We do not alter the configuration file since admins are encouraged to fine-tune it.
 # Except for this one time:
-if ynh_app_upgrading_from_version_before 0.23.0~ynh3; then
+if [ ynh_app_upgrading_from_version_before 2.42.1~ynh4 ]; then
     ynh_config_add --template="config.yaml" --destination="$install_dir/config.yaml"
     
     chmod 600 "$install_dir/config.yaml"
