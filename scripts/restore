@@ -30,8 +30,8 @@ yunohost service add $app --description="Control server for the WireGuard-based 
 # SETUP DEX FOR OIDC
 #=================================================
 
-dex_apps=$(yunohost app list -f --output-as json | jq -r '[ .apps[] | select(.manifest.id == "dex").id ]')
-firt_dex=$(jq -r 'sort_by(.id) | first.id' <<< $dex_apps)
+dex_apps="$(yunohost app list -f --output-as json | jq -r '[ .apps[] | select(.manifest.id == "dex") ]')"
+first_dex="$(jq -r 'sort_by(.id) | first.id' <<< $dex_apps)"
 
 if [ $(jq -r '[ .[] | select(.manifest.id == "dex").id ] | length' <<< $dex_apps) -eq 0 ]
 then
