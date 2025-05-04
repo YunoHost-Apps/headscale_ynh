@@ -5,6 +5,10 @@
 #=================================================
 
 setup_dex() {
+	if [ $(dpkg --compare-versions "$(yunohost app info dex --output-as json | jq -r '.version')" lt "v2.42.1~ynh4") ]; then
+		ynh_die "You need to upgrade Dex to v2.42.1~ynh4 and above first."
+	fi
+
 	ynh_app_setting_set_default --key=dex_install_dir --value="$(ynh_app_setting_get --app $dex --key install_dir)"
 	ynh_app_setting_set_default --key=dex_domain      --value="$(ynh_app_setting_get --app $dex --key domain)"
 	ynh_app_setting_set_default --key=dex_path        --value="$(ynh_app_setting_get --app $dex --key path)"
