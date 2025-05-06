@@ -3,7 +3,6 @@
 #=================================================
 # COMMON VARIABLES AND CUSTOM HELPERS
 #=================================================
-
 setup_dex() {
 	# List the Dex apps installed on the system
 	dex_apps="$(yunohost app list -f --output-as json | jq -r '[ .apps[] | select(.manifest.id == "dex") ]')"
@@ -30,7 +29,7 @@ setup_dex() {
 	dex_install_dir="$(ynh_app_setting_get --app $dex --key install_dir)"
 	dex_domain="$(ynh_app_setting_get --app $dex --key domain)"
 	dex_path="$(ynh_app_setting_get --app $dex --key path)"
-	oidc_callback="https://$domain${path%}/oidc/callback"
+	oidc_callback="https://$domain${path%/}/oidc/callback"
 
 	# If the API key needs updating (exclude Headscale requirement in CI context)
 	if [[ -z "${api_key:-}" || "$(date +%s)" -gt "${api_key_expires:-0}" ]]; then
@@ -53,7 +52,7 @@ setup_dex() {
 	ynh_app_setting_set         --key=api_key               --value="$api_key"
 	ynh_app_setting_set         --key=api_key_expires       --value="$api_key_expires"
 	ynh_app_setting_set         --key=api_key_expires_date  --value="$api_key_expires_date"
-	ynh_app_setting_set         --key=oidc_name             --value="$app"
+	ynh_app_setting_set_default --key=oidc_name             --value="$app"
 	ynh_app_setting_set         --key=oidc_callback         --value="$oidc_callback"
 	ynh_app_setting_set_default --key=oidc_secret           --value="$(ynh_string_random --length=32 --filter='A-F0-9')"
 
