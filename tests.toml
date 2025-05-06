@@ -13,7 +13,7 @@ test_format = 1.0
     preinstall = """
     sudo yunohost tools update apps
     sudo yunohost domain add dex.domain.tld
-    sudo yunohost app install dex -a "domain=dex.domain.tld&path=/"
+    sudo yunohost app install https://github.com/YunoHost-Apps/dex_ynh/tree/oneapptorulethemall -f -a "domain=dex.domain.tld&path=/&oidc_name=&oidc_secret=&oidc_callback"
     """
 
     # -------------------------------
