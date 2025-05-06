@@ -4,24 +4,24 @@ test_format = 1.0
 
 [default]
 
+    exclude = [ "install.private", "change_url" ]
+
     # ------------
     # Tests to run
     # ------------
 
     preinstall = """
+    sudo yunohost tools update apps
     sudo yunohost domain add dex.domain.tld
+    sudo yunohost app install dex -a "domain=dex.domain.tld&path=/"
     """
-
-    exclude = [ "install.private", "change_url" ]
 
     # -------------------------------
     # Default args to use for install
     # -------------------------------
 
-    args.domain = "sub.domain.tld"
-    args.dex_domain = "dex.domain.tld"
-    args.dex_path = "/"
-    args.base_domain = "sub.domain.tld"
+    args.dex = "dex"
+    args.base_domain = "vpn.internal"
 
     # -------------------------------
     # Commits to test upgrade from
