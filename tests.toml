@@ -16,6 +16,10 @@ test_format = 1.0
     sudo yunohost app install https://github.com/YunoHost-Apps/dex_ynh/tree/oneapptorulethemall -f -a "domain=dex.domain.tld&path=/&oidc_name=&oidc_secret=&oidc_callback"
     """
 
+    preupgrade = """
+    sudo yunohost app upgrade dex -u https://github.com/YunoHost-Apps/dex_ynh/tree/oneapptorulethemall -F"
+    """
+
     # -------------------------------
     # Default args to use for install
     # -------------------------------
