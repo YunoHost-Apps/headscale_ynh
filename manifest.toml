@@ -40,6 +40,8 @@ ram.runtime = "50M"
 
     [install.domain]
     type = "domain"
+    help.en = "Headscale requires a dedicated domain, with no other app installed on it."
+    help.fr = "Headscale nécessite un domaine dédié, avec aucune autre app installée dessus."
 
     [install.base_domain]
     type = "string"
