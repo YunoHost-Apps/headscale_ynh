@@ -30,21 +30,18 @@ ram.build = "50M"
 ram.runtime = "50M"
 
 [install]
+    [install.dex]
+    type = "app"
+    filter = "match(id, '^(dex)(__[0-9+])?$')"
+    ask.en = "Select the Dex app that will handle authentication for Headscale."
+    ask.fr = "Sélectionnez l'app Dex qui gérera l'authentification pour Headscale."
+    help.en = "You need to have at least one instance of Dex installed beforehand on your server."
+    help.fr = "Vous devez avoir au moins une instance de Dex préalablement installée sur votre serveur."
+
     [install.domain]
     type = "domain"
-
-    [install.dex_domain]
-    type = "domain"
-    ask.en = "Choose the domain to install Dex on"
-    ask.fr = "Choisissez le domaine sur lequel installer Dex"
-    help.en = "It should be different than Headscale's domain"
-    help.fr = "Cela devrait être différent du domaine de Headscale"
-
-    [install.dex_path]
-    type = "path"
-    ask.en = "Choose the path to install Dex on"
-    ask.fr = "Choisissez le chemin sur lequel installer Dex"
-    default = "/dex"
+    help.en = "Headscale requires a dedicated domain, with no other app installed on it."
+    help.fr = "Headscale nécessite un domaine dédié, avec aucune autre app installée dessus."
 
     [install.base_domain]
     type = "string"
