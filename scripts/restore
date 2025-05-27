@@ -27,6 +27,12 @@ ynh_restore "/etc/logrotate.d/$app"
 yunohost service add $app --description="Control server for the WireGuard-based VPN" --log="/var/log/$app/$app.log"
 
 #=================================================
+# SETUP DEX FOR OIDC
+#=================================================
+
+setup_dex
+
+#=================================================
 # RELOAD NGINX AND PHP-FPM OR THE APP SERVICE
 #=================================================
 ynh_script_progression "Reloading NGINX web server and $app's service..."
