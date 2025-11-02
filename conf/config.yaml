@@ -260,7 +260,7 @@ dns:
   base_domain: __BASE_DOMAIN__
 
   # Whether to prefer using Headscale provided DNS or use local.
-  override_local_dns: true
+  override_local_dns: false
 
   # List of DNS servers to expose to clients.
   nameservers:
