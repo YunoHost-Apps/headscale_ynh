@@ -222,10 +222,10 @@ log:
 policy:
   # The mode can be "file" or "database" that defines
   # where the ACL policies are stored and read from.
-  mode: file
+  mode: database
   # If the mode is set to "file", the path to a
   # HuJSON file containing ACL policies.
-  path: ""
+  #path: ""
 
 ## DNS
 #
@@ -260,7 +260,7 @@ dns:
   base_domain: __BASE_DOMAIN__
 
   # Whether to prefer using Headscale provided DNS or use local.
-  override_local_dns: true
+  override_local_dns: false
 
   # List of DNS servers to expose to clients.
   nameservers:
@@ -272,7 +272,7 @@ dns:
       # NextDNS (see https://tailscale.com/kb/1218/nextdns/).
       # "abc123" is example NextDNS ID, replace with yours.
       # - https://dns.nextdns.io/abc123
-      
+
     # Split DNS (see https://tailscale.com/kb/1054/dns/),
     # a map of domains and which DNS server to use for each.
     split:
@@ -286,17 +286,18 @@ dns:
   # Set custom DNS search domains. With MagicDNS enabled,
   # your tailnet base_domain is always the first search domain.
   search_domains: []
-  
+
   # Extra DNS records
   # so far only A-records are supported (on the tailscale side)
   # See: docs/ref/dns.md
-  extra_records: []
+  # extra_records:
   #   - name: "grafana.myvpn.example.com"
   #     type: "A"
   #     value: "100.64.0.3"
   #
   #   # you can also put it in one line
   #   - { name: "prometheus.myvpn.example.com", type: "A", value: "100.64.0.3" }
+  extra_records_path: "__INSTALL_DIR__/dnsrecords.json"
 
 # Unix socket used for the CLI to connect without authentication
 # Note: for production you will want to set this to something like:
