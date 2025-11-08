@@ -54,8 +54,6 @@ ram.runtime = "50M"
     [resources.sources.main]
     rename = "headscale"
 
-    i386.url = "https://github.com/juanfont/headscale/releases/download/v0.26.1/headscale_0.26.1_linux_386"
-    i386.sha256 = "0de970607a837387d37773c5e6f3b5fc3ef24cff36ae1a29bb9d10a9a547ff60"
     amd64.url = "https://github.com/juanfont/headscale/releases/download/v0.26.1/headscale_0.26.1_linux_amd64"
     amd64.sha256 = "5012577e6fc5d4234aab7b4be0d6e271ea1a4ec38521a8aa472f80ea1fe81cba"
     arm64.url = "https://github.com/juanfont/headscale/releases/download/v0.26.1/headscale_0.26.1_linux_arm64"
@@ -64,7 +62,6 @@ ram.runtime = "50M"
     armhf.sha256 = "716f24bcf4d2af05b9491ec89e2ab11c7130827aa99a0ddbdcb7eb401a34c1b1"
 
     autoupdate.strategy = "latest_github_release"
-    autoupdate.asset.i386 = ".*_linux_386$"
     autoupdate.asset.amd64 = ".*_linux_amd64$"
     autoupdate.asset.arm64 = ".*_linux_arm64$"
     autoupdate.asset.armhf = ".*_linux_armv7$"
