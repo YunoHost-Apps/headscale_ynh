@@ -21,7 +21,7 @@ fund = "https://ko-fi.com/headscale"
 [integration]
 yunohost = ">= 11.2.30"
 helpers_version = "2.1"
-architectures = ["amd64", "arm64", "armhf"]
+architectures = ["amd64", "arm64"]
 multi_instance = false
 ldap = true
 sso = false
@@ -58,13 +58,10 @@ ram.runtime = "50M"
     amd64.sha256 = "5012577e6fc5d4234aab7b4be0d6e271ea1a4ec38521a8aa472f80ea1fe81cba"
     arm64.url = "https://github.com/juanfont/headscale/releases/download/v0.26.1/headscale_0.26.1_linux_arm64"
     arm64.sha256 = "98981ea52a96260f310433c73927935bf7628eedcc4c3f747059506154edba78"
-    armhf.url = "https://github.com/juanfont/headscale/releases/download/v0.26.1/headscale_0.26.1_linux_armv7"
-    armhf.sha256 = "716f24bcf4d2af05b9491ec89e2ab11c7130827aa99a0ddbdcb7eb401a34c1b1"
 
     autoupdate.strategy = "latest_github_release"
     autoupdate.asset.amd64 = ".*_linux_amd64$"
     autoupdate.asset.arm64 = ".*_linux_arm64$"
-    autoupdate.asset.armhf = ".*_linux_armv7$"
 
     [resources.system_user]
 
