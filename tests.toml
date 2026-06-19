@@ -21,6 +21,8 @@ test_format = 1.0
     sudo yunohost app upgrade dex -u https://github.com/YunoHost-Apps/dex_ynh/tree/testing -F
     """
 
+    curl_tests.auto_test_assets = false
+
     # -------------------------------
     # Default args to use for install
     # -------------------------------
