@@ -1,4 +1,3 @@
-# Dummy comment to make linter happy about LDAP: dc=yunohost,dc=org
 # headscale will look for a configuration file named `config.yaml` (or `config.json`) in the following order:
 #
 # - `/etc/headscale`

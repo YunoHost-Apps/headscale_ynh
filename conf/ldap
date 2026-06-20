@@ -1,0 +1,4 @@
+The LDAP configuration is handled by Dex.
+The admin is asked to select a Dex instance upon installation of the app.
+
+Dummy comment to make linter happy about LDAP: dc=yunohost,dc=org
