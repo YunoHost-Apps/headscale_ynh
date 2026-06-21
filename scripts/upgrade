@@ -39,7 +39,6 @@ chmod -R ug+x "$install_dir/headscale"
 # Except for this one time:
 if ynh_app_upgrading_from_version_before 0.25.1~ynh4; then
     ynh_config_add --template="config.yaml" --destination="$install_dir/config.yaml"
-    
     chmod 600 "$install_dir/config.yaml"
     chown $app:$app "$install_dir/config.yaml"
 fi
@@ -51,6 +50,11 @@ fi
 
 touch "$install_dir/dnsrecords.json"
 chown $app:$app "$install_dir/dnsrecords.json"
+
+# Remove randomize_client_port
+if ynh_app_upgrading_from_version_before 0.29.1~ynh1; then
+    ynh_replace --match="randomize_client_port" --replace="# REMOVED. SEE UPSTREAM DOCUMENTATION. randomize_client_port" --file="$install_dir/config.yaml"
+fi
 
 #=================================================
 # REAPPLY SYSTEM CONFIGURATIONS
