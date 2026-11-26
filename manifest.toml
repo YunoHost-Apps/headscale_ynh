@@ -5,7 +5,7 @@ name = "Headscale"
 description.en = "Tailscale control server implementation, a WireGuard-based VPN"
 description.fr = "Implémentation du serveur de contrôle Tailscale, un VPN basé sur WireGuard"
 
-version = "0.29.7~ynh1"
+version = "0.29.8~ynh1"
 
 maintainers = ["tituspijean"]
 
@@ -54,10 +54,10 @@ ram.runtime = "50M"
     [resources.sources.main]
     rename = "headscale"
 
-    amd64.url = "https://github.com/juanfont/headscale/releases/download/v0.29.7/headscale_0.29.7_linux_amd64"
-    amd64.sha256 = "e827fc9b12d958bc95b081c4401dd63f8e0471d025b45b508535a920532150a8"
-    arm64.url = "https://github.com/juanfont/headscale/releases/download/v0.29.7/headscale_0.29.7_linux_arm64"
-    arm64.sha256 = "4357b38ac63c1e425f190819fd2ee078f13e01a6d7559b15811154e2475df5e4"
+    amd64.url = "https://github.com/juanfont/headscale/releases/download/v0.29.8/headscale_0.29.8_linux_amd64"
+    amd64.sha256 = "4f55dc066924bdc234a4b300c7330df4fbd89d42ba180176b6335d4a3c19759b"
+    arm64.url = "https://github.com/juanfont/headscale/releases/download/v0.29.8/headscale_0.29.8_linux_arm64"
+    arm64.sha256 = "0b02e6f23e0fc3cbe679f9fd3abf9933f6c579e1cb7fca94e2d921d15948b755"
 
     autoupdate.strategy = "latest_github_release"
     autoupdate.asset.amd64 = ".*_linux_amd64$"
